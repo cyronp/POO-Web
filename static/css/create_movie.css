@@ -27,12 +27,6 @@ input[type=number] {
   justify-content: center;
   background-color: #121212;
   gap: 20px;
-  padding: 10px 0;
-}
-
-.header-nav {
-  display: flex;
-  align-items: center;
 }
 
 .header-nav a {
@@ -43,6 +37,7 @@ input[type=number] {
 .header-nav a:last-child {
   border-right: none;
 }
+
 
 .sub-title {
   color: white;
@@ -68,7 +63,6 @@ input[type=number] {
 .title {
   font-size: 1.5rem;
   font-weight: 900;
-  padding: 5px 0;
 }
 
 .main-content {

@@ -30,12 +30,12 @@ input[type=number] {
   border-radius: 5px;
   width: 10rem;
   text-align: center;
+  margin: 10px;
 }
 
 .title {
   font-size: 1.5rem;
   font-weight: 900;
-  color: black;
 }
 
 .subtitle-content{
