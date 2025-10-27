@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/movies_all.css" />
+    <title>UnivilleDb</title>
+</head>
+<body>
+<div class="header">
+    <div class="icon">
+        <h1 class="title">UnivilleDb</h1>
+    </div>
+    <div class="header-nav">
+        <a class="sub-title" href="/movies_all">Ver todos</a>
+        <a class="sub-title" href="/movies">Listar Filmes</a>
+        <a class="sub-title" href="/series">Listar Series</a>
+        <a class="sub-title" href="/top_movie">Filme com maior nota</a>
+        <a class="sub-title" href="/top_series">Serie com maior nota</a>
+        <a class="sub-title" href="/delete_movie">Deletar Filme/Serie</a>
+        <a class="sub-title" href="/edit_movie">Editar Filme/Serie</a>
+        <a class="sub-title" href="/create_movie">Criar Filme/Serie</a>
+    </div>
+</div>
+<div class="main-content">
+    <div class="content">
+        <h2 class="content-title">Todos os filmes/series</h2>
+        <p class="content-subtitle">
+            Listagem de todos os filmes e series disponiveis
+        </p>
+        <div th:each="midia : ${midias}" class="movies-frame">
+
+            <div class="movie-info">
+
+                <span th:text="'#' + ${midia.id}" class="movie-id-badge">#1</span>
+
+                <img
+                        class="movie-image"
+                        th:src="${midia.capaUrl}"
+                        alt=""
+                />
+
+                <p class="rating">
+                    <svg
+                            width="16"
+                            height="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="ipc-icon ipc-icon--star-inline"
+                            viewBox="0 0 24 24"
+                            fill="orange"
+                            role="presentation"
+                    >
+                        <path
+                                d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"
+                        ></path></svg
+                    ><span th:text="${midia.nota}">8.6</span>
+                </p>
+
+                <h3 th:text="${midia.titulo}" class="movie-title">The boys</h3>
+
+                <span th:text="${midia.tipo}" class="content-type">Série</span>
+
+                <p th:text="${midia.duracao}" class="duration">40 Episodios</p>
+
+                <p class="director">
+                    <span class="creator-text">Criador: </span><span th:text="${midia.criador}">Eric Kripke</span>
+                </p>
+
+                <div class="genre-container">
+                    <h2 th:text="${midia.genero}" class="genre">Comedia</h2>
+                    <h2 th:text="${midia.subGenero}" class="sub-genre">Herois</h2>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
