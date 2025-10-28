@@ -49,13 +49,14 @@ input[type=number] {
 
 .id {
   padding-left: 15px;
-  background: none;
+  background: #121212;
   color: white;
-  border: 2px solid white;
+  border: 1px solid #4B4B4B;
   width: 200px;
   height: 40px;
-  font-size: 1.5rem;
+  font-size: 1rem;
   border-radius: 20px;
+  margin-right: 10px;
 }
 
 textarea:focus,
@@ -201,7 +202,7 @@ input::placeholder {
 .btn-search {
   font-size: 1.1rem;
   color: black;
-  padding: 5px 20px;
+  padding: 10px 30px;
   background: #E0B416;
   border: none;
   border-radius: 8px;
