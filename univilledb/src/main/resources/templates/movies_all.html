@@ -24,9 +24,9 @@
 </div>
 <div class="main-content">
     <div class="content">
-        <h2 class="content-title">Todos os filmes/series</h2>
-        <p class="content-subtitle">
-            Listagem de todos os filmes e series disponiveis
+        <h2 class="content-title" th:text="${pageTitle}">Título padrão</h2>
+        <p class="content-subtitle" th:text="${pageSubtitle}">
+            Subtítulo padrão
         </p>
         <div th:each="midia : ${midias}" class="movies-frame">
 

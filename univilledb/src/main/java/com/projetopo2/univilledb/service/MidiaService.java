@@ -43,7 +43,7 @@ public class MidiaService {
         if(Strings.isBlank(request.tipo())){
             builder.append("Favor informar o tipo de midia.").append("\n");
         }
-        if (request.duracao() <= 0){
+        if(Strings.isBlank(request.duracao())){
             builder.append("Favor informar uma duração válida").append("\n");
         }
         if(Strings.isBlank(request.criador())){
@@ -84,7 +84,7 @@ public class MidiaService {
         if(Strings.isBlank(request.tipo())){
             builder.append("Favor informar o tipo de midia.").append("\n");
         }
-        if (request.duracao() <= 0){
+        if(Strings.isBlank(request.duracao())){
             builder.append("Favor informar uma duração válida").append("\n");
         }
         if(Strings.isBlank(request.criador())){

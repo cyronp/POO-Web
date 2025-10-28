@@ -27,6 +27,9 @@ public class HomeController {
 
         var modelAndView = new ModelAndView("movies_all");
         modelAndView.addObject("midias", midias);
+        modelAndView.addObject("pageTitle", "Todos os filmes e séries");
+        modelAndView.addObject("pageSubtitle", "Listagem de todas as mídias disponíveis");
+
         return modelAndView;
     }
 
@@ -36,6 +39,9 @@ public class HomeController {
 
         var modelAndView = new ModelAndView("movies_all");
         modelAndView.addObject("midias", midias);
+        modelAndView.addObject("pageTitle", "Filmes");
+        modelAndView.addObject("pageSubtitle", "Listagem de todos os filmes disponíveis");
+
         return modelAndView;
     }
 
@@ -45,6 +51,9 @@ public class HomeController {
 
         var modelAndView = new ModelAndView("movies_all");
         modelAndView.addObject("midias", midias);
+        modelAndView.addObject("pageTitle", "Séries");
+        modelAndView.addObject("pageSubtitle", "Listagem de todas as séries disponíveis");
+
         return modelAndView;
     }
 
@@ -54,6 +63,9 @@ public class HomeController {
 
         var modelAndView = new ModelAndView("movies_all");
         modelAndView.addObject("midias", midias);
+        modelAndView.addObject("pageTitle", "Filme com maior nota");
+        modelAndView.addObject("pageSubtitle", "A melhor avaliação entre os filmes cadastrados");
+
         return modelAndView;
     }
 
@@ -63,6 +75,9 @@ public class HomeController {
 
         var modelAndView = new ModelAndView("movies_all");
         modelAndView.addObject("midias", midias);
+        modelAndView.addObject("pageTitle", "Série com maior nota");
+        modelAndView.addObject("pageSubtitle", "A melhor avaliação entre as séries cadastradas");
+
         return modelAndView;
     }
 
