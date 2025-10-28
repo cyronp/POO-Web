@@ -163,7 +163,7 @@
                     titulo: document.getElementById("title").value,
                     nota: parseFloat(document.getElementById("rating").value),
                     tipo: document.getElementById("contentType").value === "movie" ? "Filme" : "Serie",
-                    duracao: parseInt(document.getElementById("duration").value.match(/\d+/)[0]),
+                  duracao: document.getElementById("duration").value,
                     criador: document.getElementById("director").value,
                     genero: document.getElementById("genre").value,
                     subGenero: document.getElementById("subGenre").value,
