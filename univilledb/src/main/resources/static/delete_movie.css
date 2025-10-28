@@ -83,6 +83,7 @@ input::placeholder {
 }
 
 .movie-info {
+  position: relative;
   background-color: #1A1A1A;
   border-radius: 10px;
   width: 300px;
@@ -219,4 +220,18 @@ input::placeholder {
   border-radius: 20px;
   color: white;
   cursor: pointer;
+}
+
+.movie-id-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #E0B416;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  border: 1px solid #E0B416;
 }

@@ -1,149 +1,165 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/delete_movie.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="static/delete_movie.css"
+    />
     <title>Deletar Filme/Serie</title>
-</head>
-<body>
-<a href="/movies_all" class="back-btn">← Voltar</a>
-<div class="icon">
-    <h1 class="title">UnivilleDb</h1>
-</div>
-<h1 class="title-content">Deletar Filme/Serie</h1>
-<p class="subtitle-content">Página para exclusão de Filmes/Series</p>
-
-<div class="search-input-container">
-    <input type="number" name="Adicionar ID" id="id" class="id" placeholder="Insira o ID do Filme/Serie">
-    <button id="searchBtn" class="btn-search">Buscar</button>
-</div>
-
-<div class="content-container">
-    <div class="movies-frame">
-        <div class="movie-info" style="display: none;">
-            <span class="movie-id-badge" style="position: absolute; top: 5px; right: 5px; background: #333; color: yellow; padding: 2px 5px; border-radius: 3px;"></span>
-
-            <img
-                    class="movie-image"
-                    src=""
-                    alt="Capa do Filme/Série"
-            />
-            <p class="rating">
-                <svg
-                        width="16"
-                        height="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="ipc-icon ipc-icon--star-inline"
-                        viewBox="0 0 24 24"
-                        fill="orange"
-                        role="presentation"
-                >
-                    <path
-                            d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"
-                    ></path></svg
-                ><span class="rating-value">--</span>
-            </p>
-            <h3 class="movie-title">--</h3>
-            <span class="content-type">--</span>
-            <p class="duration">--</p>
-            <p class="director">
-                <span class="creator-text">Criador: </span><span class="director-value">--</span>
-            </p>
-            <div class="genre-container">
-                <h2 class="genre">--</h2>
-                <h2 class="sub-genre">--</h2>
-            </div>
-            <button
-                    id="deleteBtn"
-                    class="btn-access"
-            >Excluir Permanentemente
-            </button>
-        </div>
+  </head>
+  <body>
+    <a href="/movies_all" class="back-btn">← Voltar</a>
+    <div class="icon">
+      <h1 class="title">UnivilleDb</h1>
     </div>
-</div>
+    <h1 class="title-content">Deletar Filme/Serie</h1>
+    <p class="subtitle-content">Página para exclusão de Filmes/Series</p>
 
-<script>
-    const idInput = document.getElementById("id");
-    const searchBtn = document.getElementById("searchBtn");
-    const deleteBtn = document.getElementById("deleteBtn");
-    const movieInfo = document.querySelector(".movie-info");
+    <div class="search-input-container">
+      <input
+        type="number"
+        name="Adicionar ID"
+        id="id"
+        class="id"
+        placeholder="Insira o ID do Filme/Serie"
+      />
+      <button id="searchBtn" class="btn-search">Buscar</button>
+    </div>
 
-    function searchContentToDelete() {
+    <div class="content-container">
+      <div class="movies-frame">
+        <div class="movie-info" style="display: none">
+          <span class="movie-id-badge"></span>
+
+          <img class="movie-image" src="" alt="Capa do Filme/Série" />
+          <p class="rating">
+            <svg
+              width="16"
+              height="16"
+              xmlns="http://www.w3.org/2000/svg"
+              class="ipc-icon ipc-icon--star-inline"
+              viewBox="0 0 24 24"
+              fill="orange"
+              role="presentation"
+            >
+              <path
+                d="M12 20.1l5.82 3.682c1.066.675 2.37-.322 2.09-1.584l-1.543-6.926 5.146-4.667c.94-.85.435-2.465-.799-2.567l-6.773-.602L13.29.89a1.38 1.38 0 0 0-2.581 0l-2.65 6.53-6.774.602C.052 8.126-.453 9.74.486 10.59l5.147 4.666-1.542 6.926c-.28 1.262 1.023 2.26 2.09 1.585L12 20.099z"
+              ></path></svg
+            ><span class="rating-value">--</span>
+          </p>
+          <h3 class="movie-title">--</h3>
+          <span class="content-type">--</span>
+          <p class="duration">--</p>
+          <p class="director">
+            <span class="creator-text">Criador: </span
+            ><span class="director-value">--</span>
+          </p>
+          <div class="genre-container">
+            <h2 class="genre">--</h2>
+            <h2 class="sub-genre">--</h2>
+          </div>
+          <button id="deleteBtn" class="btn-access">
+            Excluir Permanentemente
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const idInput = document.getElementById("id");
+      const searchBtn = document.getElementById("searchBtn");
+      const deleteBtn = document.getElementById("deleteBtn");
+      const movieInfo = document.querySelector(".movie-info");
+
+      function searchContentToDelete() {
         const id = idInput.value;
         if (!id || parseInt(id) <= 0) {
-            alert("Por favor, insira um ID válido.");
-            movieInfo.style.display = 'none';
-            return;
+          alert("Por favor, insira um ID válido.");
+          movieInfo.style.display = "none";
+          return;
         }
 
         fetch(`/api/midias/${id}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Conteúdo não encontrado com o ID: " + id);
-                }
-                return response.json();
-            })
-            .then(data => {
-                movieInfo.querySelector(".movie-id-badge").textContent = `#${data.id}`;
-                movieInfo.querySelector(".movie-image").src = data.capaUrl;
-                movieInfo.querySelector(".rating-value").textContent = data.nota.toFixed(1); // Formata nota
-                movieInfo.querySelector(".movie-title").textContent = data.titulo;
-                movieInfo.querySelector(".content-type").textContent = data.tipo;
-                const durationText = data.tipo === 'Filme' ? `${data.duracao} min` : `${data.duracao} Episódios`;
-                movieInfo.querySelector(".duration").textContent = durationText;
-                movieInfo.querySelector(".director-value").textContent = data.criador;
-                movieInfo.querySelector(".genre").textContent = data.genero;
-                movieInfo.querySelector(".sub-genre").textContent = data.subGenero;
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Conteúdo não encontrado com o ID: " + id);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            movieInfo.querySelector(".movie-id-badge").textContent =
+              `#${data.id}`;
+            movieInfo.querySelector(".movie-image").src = data.capaUrl;
+            movieInfo.querySelector(".rating-value").textContent =
+              data.nota.toFixed(1); // Formata nota
+            movieInfo.querySelector(".movie-title").textContent = data.titulo;
+            movieInfo.querySelector(".content-type").textContent = data.tipo;
+            const durationText =
+              data.tipo === "Filme"
+                ? `${data.duracao} min`
+                : `${data.duracao} Episódios`;
+            movieInfo.querySelector(".duration").textContent = durationText;
+            movieInfo.querySelector(".director-value").textContent =
+              data.criador;
+            movieInfo.querySelector(".genre").textContent = data.genero;
+            movieInfo.querySelector(".sub-genre").textContent = data.subGenero;
 
-                movieInfo.style.display = 'flex';
-                movieInfo.scrollIntoView({ behavior: "smooth" });
-            })
-            .catch(error => {
-                console.error("Erro na busca:", error);
-                alert("Erro: " + error.message);
-                movieInfo.style.display = 'none';
-            });
-    }
-    function deleteContent() {
+            movieInfo.style.display = "flex";
+            movieInfo.scrollIntoView({ behavior: "smooth" });
+          })
+          .catch((error) => {
+            console.error("Erro na busca:", error);
+            alert("Erro: " + error.message);
+            movieInfo.style.display = "none";
+          });
+      }
+      function deleteContent() {
         const id = idInput.value;
         if (!id || parseInt(id) <= 0) {
-            alert("Nenhum ID de conteúdo válido para deletar.");
-            return;
+          alert("Nenhum ID de conteúdo válido para deletar.");
+          return;
         }
 
-        if (!confirm(`Tem certeza que deseja DELETAR o conteúdo '${movieInfo.querySelector(".movie-title").textContent}' (ID #${id})? Esta ação é irreversível.`)) {
-            return;
+        if (
+          !confirm(
+            `Tem certeza que deseja DELETAR o conteúdo '${movieInfo.querySelector(".movie-title").textContent}' (ID #${id})? Esta ação é irreversível.`
+          )
+        ) {
+          return;
         }
 
         fetch(`/api/midias/${id}`, {
-            method: "DELETE",
+          method: "DELETE",
         })
-            .then(response => {
-                if (response.status === 204) {
-                    alert("Conteúdo deletado com sucesso!");
-                    idInput.value = '';
-                    movieInfo.style.display = 'none';
-                } else {
-                    return response.text().then(text => {
-                        throw new Error(text || `Erro ao deletar (Status: ${response.status})`);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error("Erro ao deletar:", error);
-                alert("Erro ao deletar: " + error.message);
-            });
-    }
-    searchBtn.addEventListener("click", searchContentToDelete);
+          .then((response) => {
+            if (response.status === 204) {
+              alert("Conteúdo deletado com sucesso!");
+              idInput.value = "";
+              movieInfo.style.display = "none";
+            } else {
+              return response.text().then((text) => {
+                throw new Error(
+                  text || `Erro ao deletar (Status: ${response.status})`
+                );
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Erro ao deletar:", error);
+            alert("Erro ao deletar: " + error.message);
+          });
+      }
+      searchBtn.addEventListener("click", searchContentToDelete);
 
-    idInput.addEventListener("keypress", function (e) {
+      idInput.addEventListener("keypress", function (e) {
         if (e.key === "Enter") {
-            e.preventDefault();
-            searchContentToDelete();
+          e.preventDefault();
+          searchContentToDelete();
         }
-    });
-    deleteBtn.addEventListener("click", deleteContent);
-</script>
-</body>
+      });
+      deleteBtn.addEventListener("click", deleteContent);
+    </script>
+  </body>
 </html>
